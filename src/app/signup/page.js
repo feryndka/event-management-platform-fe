@@ -1,8 +1,8 @@
 import { Input } from "@chakra-ui/react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next/link"
 
-export default function Login() {
+export default function SignUp() {
   return (
     <section className="bg-gray-50 min-h-screen flex items-center justify-center">
       <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
@@ -16,18 +16,19 @@ export default function Login() {
           />
           <Image
             className=""
-            alt="Login"
-            src="/Login.png"
-            width={120}
+            alt="Sign Up"
+            src="/signup.png"
+            width={150}
             height={100}
           />
 
           <form action="" className="flex flex-col gap-4">
             <Input className="p-2 mt-8 rounded-xl border" type="email" name="email" placeholder="Email address" />
             <div className="relative">
+              <Input className="p-2 mb-4 rounded-xl border w-full" type="username" name="username" placeholder="Username" />
               <Input className="p-2 rounded-xl border w-full" type="password" name="password" placeholder="Password" />
             </div>
-            <button className="bg-[#d1410c] rounded-xl text-white py-2 hover:scale-105 duration-300">Login</button>
+            <button className="bg-[#d1410c] rounded-xl text-white py-2 hover:scale-105 duration-300">Create account</button>
           </form>
 
           <div className="mt-6 grid grid-cols-3 items-center text-gray-400">
@@ -43,14 +44,14 @@ export default function Login() {
               <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z" />
               <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z" />
             </svg>
-            Login with Google
+            Sign in with Google
           </button>
 
           <div className="mt-3 text-xs flex justify-between items-center pt-5">
-            <p>Do not have an account?</p>
-            <Link href={'/signup'}>
+            <p>Already have an account?</p>
+            <Link href={'/login'}>
               <button className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">
-                Sign Up
+                Log In
               </button>
             </Link>
           </div>
