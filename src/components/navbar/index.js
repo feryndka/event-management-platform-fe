@@ -3,6 +3,9 @@ import { SearchIcon } from "@chakra-ui/icons"
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react"
 import Image from "next/image"
 import Link from "next/link"
+import { menu } from "../../data/menu.js"
+import { HiOutlineBars3BottomRight, HiXMark } from "react-icons/hi2";
+import { useState } from "react"
 
 export default function Navbar() {
   return (
@@ -16,6 +19,7 @@ export default function Navbar() {
           height={100}
         />
       </div>
+
       <div className="w-[500px] bg-gray-100 hover:shadow-md">
         <InputGroup>
           <InputLeftElement pointerEvents='none'>
@@ -24,11 +28,15 @@ export default function Navbar() {
           <Input type='search' placeholder='Search event' />
         </InputGroup>
       </div>
+
       <div className="flex items-center text-base">
-        <Link href="/" className="py-1 px-5 hover:bg-gray-100 hover:rounded-full">Find Events</Link>
-        <Link href="/" className="py-1 px-5 hover:bg-gray-100 hover:rounded-full">Create Events</Link>
-        <Link href="/login" className="py-1 px-5 hover:bg-gray-100 hover:rounded-full">Log In</Link>
-        <Link href="/" className="py-1 px-5 hover:bg-gray-100 hover:rounded-full">Sign Up</Link>
+        {menu?.map((data, index) => {
+          return (
+            <Link key={index} href={data.url} className="py-1 px-5 hover:bg-gray-100 hover:rounded-full">
+              {data.label}
+            </Link>
+          )
+        })}
       </div>
     </nav>
   )
