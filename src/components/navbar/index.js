@@ -4,12 +4,13 @@ import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react"
 import Image from "next/image"
 import Link from "next/link"
 import { menu } from "../../data/menu.js"
-import { HiOutlineBars3BottomRight, HiXMark } from "react-icons/hi2";
-import { useState } from "react"
+import { Flex, Button } from '@chakra-ui/react'
+
+import "./style.css"
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 w-full flex justify-between items-center py-3 px-5 shadow-xl bg-white z-10">
+    <nav className="sticky top-0 w-full flex justify-between items-center py-3 px-5 shadow-md bg-white z-10">
       <div className="flex items-center space-x-5">
         <Image
           className=""
@@ -29,7 +30,18 @@ export default function Navbar() {
         </InputGroup>
       </div>
 
-      <div className="flex items-center text-base">
+      <Flex className="md:flex">
+        {menu?.map((data, index) => {
+          return (
+            <Link key="index" href={data.url}>
+              <Button variant='ghost' aria-label={data.label}>
+                {data.label}
+              </Button>
+            </Link>
+          )
+        })}
+      </Flex>
+      {/* <div className="menu flex items-center text-base">
         {menu?.map((data, index) => {
           return (
             <Link key={index} href={data.url} className="py-1 px-5 hover:bg-gray-100 hover:rounded-full">
@@ -37,7 +49,7 @@ export default function Navbar() {
             </Link>
           )
         })}
-      </div>
+      </div> */}
     </nav>
   )
 }
