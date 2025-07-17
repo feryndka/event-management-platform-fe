@@ -2,6 +2,9 @@
   "name": "event_management_platform_fe",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,7 +17,7 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "framer-motion": "^10.18.0",
-    "next": "14.0.4",
+    "next": "^14.2.30",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1"
